@@ -3,12 +3,6 @@ import tickerInit from '../utils/ticker'
 import { TickerItem } from '..'
 import getDirectionalInfo from '../utils/getDirectionalInfo'
 
-const TableTickerData = (specialStyle, { children }) => (
-  <td style={specialStyle ? specialStyle : { textAlign: 'center' }}>
-    {children}
-  </td>
-)
-
 export default function Home() {
   const [tickerMap, setTickerMap] = useState({})
 
