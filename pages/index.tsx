@@ -10,7 +10,7 @@ export default function Home() {
 
   const updateTicker = (data) => {
     tickerMapRef.current = data
-    console.log(data)
+    console.log('new tick', data)
     setTickerMap(data)
   }
 
@@ -27,6 +27,7 @@ export default function Home() {
       <h1>React Ticker Interview</h1>
       <table>
         <th>Stock</th>
+        <th>Value</th>
         <th>Change</th>
         <th></th>
         {Object.values(tickerMapRef.current).map((tickerItem: TickerItem) => {
@@ -34,6 +35,7 @@ export default function Home() {
           return (
             <tr key={tickerItem.symbol} style={{ textAlign: 'center' }}>
               <td>{tickerItem.symbol}</td>
+              <td>{tickerItem.end}</td>
               <td>{tickerItem.change}</td>
               <td style={{ color: directionalInfo.color }}>{directionalInfo.icon}</td>
             </tr>
